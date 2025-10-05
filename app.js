@@ -26,10 +26,7 @@ const data = {
       { name: "Cooling Eye Roller", href: "https://example.com/eye2", desc: "Instant refresh" }
     ]
   },
-  "right-eye": {
-    // reuse same as left
-    copyFrom: "left-eye"
-  },
+  "right-eye": { copyFrom: "left-eye" },
   "nose": {
     title: "Nose — Blackheads & shine",
     cause: "Excess oil and clogged pores are common here.",
@@ -56,9 +53,7 @@ const data = {
       { name: "Gentle Cleanser", href: "https://example.com/ch2", desc: "Non-stripping formula" }
     ]
   },
-  "right-cheek": {
-    copyFrom: "left-cheek"
-  },
+  "right-cheek": { copyFrom: "left-cheek" },
   "mouth": {
     title: "Mouth & chin — Acne & irritation",
     cause: "Hormonal acne, friction or occlusive products.",
@@ -74,9 +69,9 @@ const data = {
   }
 };
 
-// copy shortcuts if needed
-Object.keys(data).forEach(k=>{
-  if(data[k].copyFrom){
+// copy shortcuts
+Object.keys(data).forEach(k => {
+  if (data[k].copyFrom) {
     data[k] = JSON.parse(JSON.stringify(data[data[k].copyFrom]));
   }
 });
@@ -89,9 +84,9 @@ const tipsEl = document.getElementById('cardTips');
 const productsEl = document.getElementById('cardProducts');
 const closeBtn = document.getElementById('closeBtn');
 
-// attach click handlers to SVG regions
-document.querySelectorAll('.region').forEach(el=>{
-  el.addEventListener('click', (ev)=>{
+// attach click handlers
+document.querySelectorAll('.region').forEach(el => {
+  el.addEventListener('click', () => {
     const id = el.id;
     openCardFor(id);
   });
@@ -99,21 +94,21 @@ document.querySelectorAll('.region').forEach(el=>{
 
 closeBtn.addEventListener('click', closeCard);
 
-function openCardFor(id){
+function openCardFor(id) {
   const info = data[id];
-  if(!info) return;
+  if (!info) return;
   titleEl.textContent = info.title || id;
   causeEl.textContent = info.cause || "";
-  // tips
+
   tipsEl.innerHTML = '';
-  (info.tips || []).forEach(t=>{
+  (info.tips || []).forEach(t => {
     const li = document.createElement('li');
     li.textContent = t;
     tipsEl.appendChild(li);
   });
-  // products
+
   productsEl.innerHTML = '';
-  (info.products || []).forEach(p=>{
+  (info.products || []).forEach(p => {
     const div = document.createElement('div');
     div.className = 'product';
     const meta = document.createElement('div');
@@ -127,18 +122,16 @@ function openCardFor(id){
     small.textContent = p.desc || '';
     meta.appendChild(a);
     meta.appendChild(small);
-
     div.appendChild(meta);
     productsEl.appendChild(div);
   });
 
   card.classList.remove('hidden');
-  card.setAttribute('aria-hidden','false');
-  // scroll into view on small screens
-  card.scrollIntoView({behavior:'smooth', block:'center'});
+  card.setAttribute('aria-hidden', 'false');
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-function closeCard(){
+function closeCard() {
   card.classList.add('hidden');
-  card.setAttribute('aria-hidden','true');
+  card.setAttribute('aria-hidden', 'true');
 }
