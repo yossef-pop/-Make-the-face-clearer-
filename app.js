@@ -1,4 +1,3 @@
-// Simple client-side data + UI for the face tool
 const data = {
   "forehead": {
     title: "Forehead — Fine lines & dryness",
@@ -9,8 +8,8 @@ const data = {
       "Avoid heavy rubbing; pat skin gently."
     ],
     products: [
-      { name: "Light Hyaluronic Serum", href: "https://example.com/product1", desc: "Hydrates without heaviness" },
-      { name: "Broad-Spectrum SPF 30", href: "https://example.com/product2", desc: "Daily UV protection" }
+      { name: "Light Hyaluronic Serum", href: "#", desc: "Hydrates without heaviness" },
+      { name: "Broad-Spectrum SPF 30", href: "#", desc: "Daily UV protection" }
     ]
   },
   "left-eye": {
@@ -22,8 +21,8 @@ const data = {
       "Use cold compresses to reduce puffiness."
     ],
     products: [
-      { name: "Caffeine Eye Gel", href: "https://example.com/eye1", desc: "Reduces puffiness and brightens" },
-      { name: "Cooling Eye Roller", href: "https://example.com/eye2", desc: "Instant refresh" }
+      { name: "Caffeine Eye Gel", href: "#", desc: "Reduces puffiness and brightens" },
+      { name: "Cooling Eye Roller", href: "#", desc: "Instant refresh" }
     ]
   },
   "right-eye": { copyFrom: "left-eye" },
@@ -36,8 +35,8 @@ const data = {
       "Keep hands away from the nose area."
     ],
     products: [
-      { name: "Salicylic Cleanser", href: "https://example.com/no1", desc: "Clears excess oil" },
-      { name: "Oil-absorbing Blotting Sheets", href: "https://example.com/no2", desc: "Quick mattifying" }
+      { name: "Salicylic Cleanser", href: "#", desc: "Clears excess oil" },
+      { name: "Oil-absorbing Blotting Sheets", href: "#", desc: "Quick mattifying" }
     ]
   },
   "left-cheek": {
@@ -49,8 +48,8 @@ const data = {
       "Introduce products one at a time to spot triggers."
     ],
     products: [
-      { name: "Calming Moisturizer", href: "https://example.com/ch1", desc: "Soothes redness" },
-      { name: "Gentle Cleanser", href: "https://example.com/ch2", desc: "Non-stripping formula" }
+      { name: "Calming Moisturizer", href: "#", desc: "Soothes redness" },
+      { name: "Gentle Cleanser", href: "#", desc: "Non-stripping formula" }
     ]
   },
   "right-cheek": { copyFrom: "left-cheek" },
@@ -63,8 +62,8 @@ const data = {
       "Keep mobile phone screen clean (contact with chin spreads bacteria)."
     ],
     products: [
-      { name: "Benzoyl Peroxide Spot Gel", href: "https://example.com/m1", desc: "Reduces active spots" },
-      { name: "Non-comedogenic Lip Balm", href: "https://example.com/m2", desc: "Helps prevent clogging" }
+      { name: "Benzoyl Peroxide Spot Gel", href: "#", desc: "Reduces active spots" },
+      { name: "Non-comedogenic Lip Balm", href: "#", desc: "Helps prevent clogging" }
     ]
   }
 };
