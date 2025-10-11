@@ -13,7 +13,6 @@
     { "src": "/images/(.*)", "dest": "/images/$1" },
     { "src": "/page1.html", "dest": "/page1.html" },
     { "src": "/page2.html", "dest": "/page2.html" },
-    { "src": "/page3.html", "dest": "/page3.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/page3.html", "dest": "/page3.html" }
   ]
 }
