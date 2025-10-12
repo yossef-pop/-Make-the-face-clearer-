@@ -12,13 +12,14 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--cream);
   font-family: Arial, Helvetica, sans-serif;
   direction: rtl;
-  overflow-x: hidden; /* למנוע גלילה אופקית */
+  background: var(--cream);
   color: #111;
+  overflow-x: hidden;
 }
 
+/* פרסומות עליונה ותחתונה */
 .top-ad, .bottom-ad {
   background: #eee;
   padding: 12px;
@@ -27,43 +28,53 @@ html, body {
   font-weight: 600;
 }
 
+/* מכולת מבנה הדף */
 .container {
   display: flex;
-  gap: 16px;
-  padding: 20px 12px;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
+/* צדדים */
 .side-ad {
-  width: 120px;
+  width: 140px;
   background: #fafafa;
   border: 1px dashed rgba(0,0,0,0.06);
+  border-radius: 10px;
   padding: 12px;
   text-align: center;
-  flex-shrink: 0; /* לא יתכווץ */
+  flex-shrink: 0;
 }
 
+/* אזור תוכן המרכזי */
 .content {
   flex: 1;
   min-width: 0;
-  overflow-y: auto; /* גלילה אנכית */
+  background: var(--cream);
 }
 
 .site-title {
-  margin: 0 0 12px 0;
-  padding: 6px 0;
+  margin: 0 0 16px 0;
   text-align: center;
 }
 
+/* הגלריה */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
-  padding: 0 20px; /* רווח פנימי לצדדים */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 0 30px 40px 30px;
+  background: #fffaf1;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
+/* כרטיס */
 .tile {
   background: var(--tile-bg);
-  border: 1px solid var(--tile-border);
+  border: 2px solid #000;
   border-radius: 10px;
   padding: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.06);
@@ -73,6 +84,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor: pointer;
 }
 
 .tile-img {
@@ -88,6 +100,7 @@ html, body {
   color: #222;
 }
 
+/* תפריט כפתור */
 .menu-btn {
   position: absolute;
   top: 8px;
@@ -98,67 +111,7 @@ html, body {
   cursor: pointer;
 }
 
-.menu {
-  position: absolute;
-  top: 36px;
-  left: 8px;
-  background: white;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  padding: 6px;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.menu-item {
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.menu-item:hover {
-  background: #f2f2f2;
-}
-body {
-  background-color: #f6efe6; /* צבע שמנת */
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow-x: hidden; /* מבטל גלילה לרוחב */
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-  padding: 20px 4%;
-  max-width: 96vw;
-  margin: 0 auto;
-}
-
-}
-
-.card {
-  background: white;
-  border: 2px solid #000;
-  border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
+/* תפריט בחירה */
 .menu {
   position: absolute;
   top: 50%;
@@ -174,7 +127,7 @@ body {
   gap: 8px;
 }
 
-.menu button {
+.menu-item {
   border: none;
   background: #eee;
   padding: 6px 10px;
@@ -182,7 +135,7 @@ body {
   cursor: pointer;
 }
 
-.menu button:hover {
+.menu-item:hover {
   background: #ddd;
 }
 
