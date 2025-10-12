@@ -3,43 +3,39 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>גריד אביזרים — 19 פריטים</title>
+<title>גלריית איברים</title>
 <link rel="stylesheet" href="css7.css" />
 </head>
+
 <body>
-<div class="top-ad">פרסומת עליונה (Placeholder)</div>
-<div class="container">
-  <div class="gallery"></div>
+  <div class="top-ad">פרסומת עליונה (Placeholder)</div>
 
-<aside class="side-ad left">פרסומת שמאלית</aside>
+  <div class="container">
+    <aside class="side-ad left">פרסומת שמאלית</aside>
 
-<main class="content">
-<h1 class="site-title">גלריית איברים</h1>
-<div id="grid" class="grid"></div>
-</main>
+    <main class="content">
+      <h1 class="site-title">גלריית איברים</h1>
+      <div id="grid" class="grid"></div>
+    </main>
 
+    <aside class="side-ad right">פרסומת ימנית</aside>
+  </div>
 
-<aside class="side-ad right">פרסומת ימנית</aside>
-</div>
+  <div class="bottom-ad">פרסומת תחתונה (Placeholder)</div>
 
+  <template id="tile-template">
+    <div class="tile">
+      <img class="tile-img" src="" alt="" />
+      <div class="tile-title"></div>
+      <button class="menu-btn">⋯</button>
+      <div class="menu" hidden>
+        <button class="menu-item" data-page="page1.html">בעיה</button>
+        <button class="menu-item" data-page="page2.html">בעיה</button>
+        <button class="menu-item" data-page="page3.html">בעיה</button>
+      </div>
+    </div>
+  </template>
 
-<div class="bottom-ad">פרסומת תחתונה (Placeholder)</div>
-
-
-<template id="tile-template">
-<div class="tile">
-<img class="tile-img" src="" alt="" />
-<div class="tile-title"></div>
-<button class="menu-btn">⋯</button>
-<div class="menu" hidden>
-<button class="menu-item" data-page="page1.html">בעיה</button>
-<button class="menu-item" data-page="page2.html">בעיה</button>
-<button class="menu-item" data-page="page3.html">בעיה</button>
-</div>
-</div>
-</template>
-
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
