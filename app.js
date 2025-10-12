@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       document.querySelectorAll(".menu").forEach(m => m.hidden = true);
       menu.hidden = !menu.hidden;
+if (!menu.hidden) {
+  const rect = menuBtn.getBoundingClientRect();
+  menu.style.position = "absolute";
+  menu.style.top = menuBtn.offsetTop + 25 + "px";
+  menu.style.left = menuBtn.offsetLeft + "px";
+}
+
     });
 
     menu.querySelectorAll(".menu-item").forEach(btn => {
