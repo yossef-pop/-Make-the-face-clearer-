@@ -133,9 +133,13 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px 4%;
+  max-width: 96vw;
+  margin: 0 auto;
+}
+
 }
 
 .card {
