@@ -14,33 +14,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const clone = template.content.cloneNode(true);
     const img = clone.querySelector(".tile-img");
     const title = clone.querySelector(".tile-title");
-    const menuBtn = clone.querySelector(".menu-btn");
     const menu = clone.querySelector(".menu");
 
     img.src = `images/${name}.png`;
     img.alt = name;
     title.textContent = name;
 
-    menuBtn.addEventListener("click", e => {
+    // פותח את התפריט רק כשנלחץ על התמונה
+    img.addEventListener("click", e => {
       e.stopPropagation();
       document.querySelectorAll(".menu").forEach(m => m.hidden = true);
       menu.hidden = !menu.hidden;
-if (!menu.hidden) {
-  const rect = menuBtn.getBoundingClientRect();
-  menu.style.position = "absolute";
-  menu.style.top = menuBtn.offsetTop + 25 + "px";
-  menu.style.left = menuBtn.offsetLeft + "px";
-}
 
+      // ממקם את התפריט מתחת לתמונה
+      if (!menu.hidden) {
+        menu.style.position = "absolute";
+        menu.style.top = img.offsetHeight + 10 + "px"; // 10px מתחת לתמונה
+        menu.style.left = "50%";
+        menu.style.transform = "translateX(-50%)";
+      }
     });
 
+    // הקלקה על אחד מהאפשרויות
     menu.querySelectorAll(".menu-item").forEach(btn => {
       btn.addEventListener("click", () => {
+        menu.hidden = true;
         window.location.href = btn.dataset.page;
       });
     });
 
-    document.body.addEventListener("click", () => (menu.hidden = true));
+    // הקלקה מחוץ לכרטיס סוגרת את כל התפריטים
+    document.body.addEventListener("click", () => {
+      menu.hidden = true;
+    });
+
     grid.appendChild(clone);
   });
 });
